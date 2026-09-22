@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
+<script>document.documentElement.classList.add('js')</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tuva Mirtha Sandberg — Portfolio</title>
@@ -12,11 +13,13 @@
 </head>
 <body>
 
-<section class="stage hero-stage reveal" id="hero">
+<header class="stage hero-stage reveal is-visible" id="hero">
   <div class="hero-circle" aria-hidden="true"></div>
   <h1 class="hero-name">Tuva Mirtha Sandberg</h1>
   <a class="linkedin-badge" href="https://www.linkedin.com/in/tuva-sandberg-942648289" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-</section>
+</header>
+
+<main>
 
 <section class="stage profil-stage reveal" id="profil">
   <div class="profil-text">
@@ -38,29 +41,34 @@
     Adobe Illustrator, Photoshop, InDesign, Adobe Premier, Framer, Wordpress, CapCut...</p>
   </div>
   <div class="profil-photo">
-    <img class="profil-glow" src="assets/images/web/hero-glow.png" alt="" aria-hidden="true">
-    <img class="profil-portrait-img" src="assets/images/web/profil-portrait.png" alt="Tuva Mirtha Sandberg">
+    <div class="profil-glow" aria-hidden="true"></div>
+    <img class="profil-portrait-img" src="assets/images/web/profil-portrait.png" alt="Tuva Mirtha Sandberg" loading="eager">
   </div>
 </section>
 
 <section class="stage magasin-cover-stage reveal" id="solglimt">
   <h2 class="magasin-cover-heading">Magasin &ldquo;Solglimt&rdquo;</h2>
-  <img class="magasin-cover-img" src="assets/images/web/magasin-cover-cutout.png" alt="Magasinet Solglimt, omslag">
+  <img class="magasin-cover-img" src="assets/images/web/magasin-cover-cutout.png" alt="Magasinet Solglimt, omslag" loading="lazy">
 </section>
 
 <section class="stage magasin-content-stage reveal" id="magasin-innehall">
   <div class="magasin-left">
     <div class="magasin-left-heading">
       <h3>Magasin</h3>
-      <img class="kau-logo" src="assets/images/web/kau-logo.png" alt="Karlstads universitet">
+      <img class="kau-logo" src="assets/images/web/kau-logo.png" alt="Karlstads universitet" loading="lazy">
     </div>
     <p>I kursen <em>Projektledning och produktion</em> vid Karlstads universitet, skapade jag innehåll, layout och design för ett eget magasin. Karlstads varumärke som solstad, inspirerade mig att skapa magasinet &ldquo;Solglimt&rdquo;. En lokal periodisk skrift med fokus på studentlivet unga som vuxna Karlstadbor fascineras utav.</p>
-    <img class="bingo-img" src="assets/images/web/magasin-bingo.jpg" alt="Uppslag med bingo-spel ur Solglimt">
-    <p class="vertical-credit">Skapad med InDesign.</p>
+    <div class="bingo-wrap">
+      <img class="bingo-img" src="assets/images/web/magasin-bingo.jpg" alt="Uppslag med bingo-spel ur Solglimt" loading="lazy">
+      <p class="vertical-credit">Skapad med InDesign.</p>
+    </div>
   </div>
   <div class="magasin-right">
-    <img class="hemforstunden-img" src="assets/images/web/magasin-hemforstunden.jpg" alt="Artikeln Hem för stunden">
-    <img class="stakvar-img" src="assets/images/web/magasin-stakvar.jpg" alt="Artikeln Stå kvar eller utveckla">
+    <div class="magasin-right-top">
+      <img class="hemforstunden-img tilt-left" src="assets/images/web/magasin-hemforstunden-l.jpg" alt="Artikeln Hem för stunden, text" loading="lazy">
+      <img class="hemforstunden-img tilt-right" src="assets/images/web/magasin-hemforstunden-r.jpg" alt="Artikeln Hem för stunden, foto" loading="lazy">
+    </div>
+    <img class="stakvar-img" src="assets/images/web/magasin-stakvar.jpg" alt="Artikeln Stå kvar eller utveckla" loading="lazy">
     <p class="photo-credit">Foto, text, layout, illustrationer av Tuva Mirtha Sandberg</p>
   </div>
 </section>
@@ -71,52 +79,61 @@
     <p>På tidningen utvecklade jag innehåll för tidningen i Wordpress och den fysiska upplagan med InDesign, samtidigt arbetade jag delvis med innehåll för övriga kanaler, som TikTok och Instagram.</p>
     <p>Papperstidning redigerad av mig med 1500 tryckta exemplar, utdelade vid Karlstads universitets campus.</p>
   </div>
-  <img class="studenttidning-cover" src="assets/images/web/studenttidning-cover.jpg" alt="Karlstads studenttidning, omslag">
+  <img class="studenttidning-cover" src="assets/images/web/studenttidning-cover.jpg" alt="Karlstads studenttidning, omslag" loading="lazy">
 </section>
 
 <section class="stage carousel-stage reveal" id="karusell">
   <div class="carousel-imgs">
-    <img src="assets/images/web/studenttidning-carousel-1.jpg" alt="Instagram-karusell, del 1">
-    <img src="assets/images/web/studenttidning-carousel-2.jpg" alt="Instagram-karusell, del 2">
-    <img src="assets/images/web/studenttidning-carousel-3.jpg" alt="Instagram-karusell, del 3">
+    <img src="assets/images/web/studenttidning-carousel-1.jpg" alt="Instagram-karusell, del 1" loading="lazy">
+    <img src="assets/images/web/studenttidning-carousel-2.jpg" alt="Instagram-karusell, del 2" loading="lazy">
+    <img src="assets/images/web/studenttidning-carousel-3.jpg" alt="Instagram-karusell, del 3" loading="lazy">
   </div>
   <p class="carousel-caption">En karusell skapad till instagram.</p>
 </section>
 
 <section class="stage nwt-stage reveal" id="nwt">
-  <h2 class="nwt-heading"><em>Kampanj:</em> NWT Bredband<img class="nwt-arrow" src="assets/images/web/kampanj-pil.png" alt=""></h2>
+  <h2 class="nwt-heading">
+    <em>Kampanj:</em> NWT Bredband
+    <svg class="nwt-arrow" viewBox="0 0 71 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M4 6C22 10 45 20 58 40M58 40L46 36M58 40L54 53" stroke="#3a3ad6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </h2>
   <p class="nwt-body">I ett gruppsamarbete med NWT Bredband skapades digitala affischer riktat fokus på landsbygden som målgrupp. En framtagen kampanj för leverantören i samband med bredbandets release till fler orter, inom och utanför Värmland. Fotografering i Arvika på en gård nära min uppväxt och skapat med Adobe InDesign. &ndash; Mitt urval från kampanjen.</p>
-  <img class="nwt-poster nwt-poster-left" src="assets/images/web/nwt-kampanj-1.jpg" alt="NWT Bredband-kampanj, affisch 1">
-  <img class="nwt-poster nwt-poster-mid" src="assets/images/web/nwt-kampanj-2.jpg" alt="NWT Bredband-kampanj, affisch 2">
-  <img class="nwt-poster nwt-poster-right" src="assets/images/web/nwt-kampanj-3.jpg" alt="NWT Bredband-kampanj, affisch 3">
+  <img class="nwt-poster nwt-poster-left" src="assets/images/web/nwt-kampanj-1.jpg" alt="NWT Bredband-kampanj, affisch 1" loading="lazy">
+  <img class="nwt-poster nwt-poster-mid" src="assets/images/web/nwt-kampanj-2.jpg" alt="NWT Bredband-kampanj, affisch 2" loading="lazy">
+  <img class="nwt-poster nwt-poster-right" src="assets/images/web/nwt-kampanj-3.jpg" alt="NWT Bredband-kampanj, affisch 3" loading="lazy">
 </section>
 
 <section class="stage collab-stage reveal" id="drmlnd">
-  <h2 class="collab-heading">@Tuvas_tiktok x <img class="drmlnd-logo" src="assets/images/web/drmlnd-logo.png" alt="DRM-LND"></h2>
+  <h2 class="collab-heading">@Tuvas_tiktok x <img class="drmlnd-logo" src="assets/images/web/drmlnd-logo.png" alt="DRM-LND" loading="lazy"></h2>
   <div class="phone-frame">
-    <video src="assets/images/web/tiktok-video.mp4" autoplay muted loop playsinline></video>
+    <div class="phone-notch" aria-hidden="true"></div>
+    <video class="phone-video" src="assets/images/web/tiktok-video.mp4" muted loop playsinline preload="none"></video>
+    <button class="phone-play-toggle" type="button" aria-label="Spela/pausa video">▶</button>
   </div>
   <div class="collab-text-col">
     <p>DRM-LND är ett företag som började med att sälja accessoarer till mobilen. Företaget bygger på ett unikt koncept, där kunderna får sätta sin egen prägel på mobilskal, genom val av berlocker och färg på skal.</p>
     <p>Med 9000 följare och aktiva tittare hade jag 300 000 visningar i månaden på mitt konto, under tiden jag var aktiv på plattformen.</p>
   </div>
-  <img class="mobilskal-img" src="assets/images/web/mobilskal-cutout.png" alt="Mobilskal med berlocker">
-  <img class="butiksbild-img" src="assets/images/web/butiksbild.jpg" alt="DRM-LND butiksdisplay">
-  <img class="sellpy-logo" src="assets/images/web/sellpy-logo.png" alt="Sellpy">
-  <img class="arkenzoo-logo" src="assets/images/web/arkenzoo-logo.png" alt="Arken Zoo">
+  <img class="mobilskal-img" src="assets/images/web/mobilskal-cutout.png" alt="Mobilskal med berlocker" loading="lazy">
+  <img class="butiksbild-img" src="assets/images/web/butiksbild.jpg" alt="DRM-LND butiksdisplay" loading="lazy">
+  <img class="sellpy-logo" src="assets/images/web/sellpy-logo.png" alt="Sellpy" loading="lazy">
+  <img class="arkenzoo-logo" src="assets/images/web/arkenzoo-logo.png" alt="Arken Zoo" loading="lazy">
   <p class="collab-credit">Mitt förespråkande för secondhand-shoppande resulterade i ett samarbete med Sellpy, medan mitt livsstils &ldquo;content&rdquo; landade i ett samarbete med Arken Zoo. För respektive företag filmade och redigerade jag videoklipp med varderas produkter.</p>
 </section>
 
 <section class="stage outro-stage reveal" id="outro">
-  <img class="outro-portrait" src="assets/images/web/avslutning-portratt.png" alt="Tuva Mirtha Sandberg">
+  <img class="outro-portrait" src="assets/images/web/avslutning-portratt.png" alt="Tuva Mirtha Sandberg" loading="lazy">
   <h2 class="outro-heading">Tack för besöket,<br>vi hörs!</h2>
   <a class="outro-phone" href="tel:+46706692029">070 669 20 29</a>
   <a class="outro-email" href="mailto:tuvamirthasandberg@icloud.com">tuvamirthasandberg@icloud.com</a>
 </section>
 
-<footer class="legal-bar">
-  <a href="#">Terms &amp; Support</a>
-  <a href="#">Privacy Policy</a>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Tuva Mirtha Sandberg</p>
+  <a href="mailto:tuvamirthasandberg@icloud.com">tuvamirthasandberg@icloud.com</a>
 </footer>
 
 <script src="js/main.js"></script>
