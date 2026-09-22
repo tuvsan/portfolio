@@ -3,7 +3,7 @@
   --text: #000000;
   --ink: #212126;
   --accent-teal: #5cc7db;
-  --font-script: 'Caveat', cursive;
+  --font-script: 'Mrs Saint Delafield', cursive;
   --font-serif: 'EB Garamond', serif;
   --font-sans: 'Inter', sans-serif;
 }
@@ -51,7 +51,7 @@ main { display: block; }
   align-items: center;
   justify-content: center;
   font-family: var(--font-script);
-  font-weight: 600;
+  font-weight: 400;
   font-size: min(5vw, 72px);
   text-align: center;
   white-space: nowrap;
@@ -59,20 +59,23 @@ main { display: block; }
 
 .linkedin-badge {
   position: absolute;
+  z-index: 2;
   left: min(92.08vw, 1326px);
   top: min(47.99vw, 691px);
-  width: min(1.94vw, 28px);
-  height: min(1.67vw, 24px);
+  width: min(2vw, 29px);
+  height: min(2vw, 29px);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--text);
-  color: var(--bg);
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: min(0.9vw, 13px);
+  background: #0a66c2;
+  color: #fff;
   text-decoration: none;
-  border-radius: 3px;
+  border-radius: 6px;
+}
+
+.linkedin-badge svg {
+  width: 70%;
+  height: 70%;
 }
 
 /* ---------- 2. Profil ---------- */
@@ -143,7 +146,7 @@ main { display: block; }
   transform: translateX(-50%) rotate(-5deg);
   margin: 0;
   font-family: var(--font-script);
-  font-weight: 600;
+  font-weight: 400;
   font-size: min(3.6vw, 52px);
   text-align: center;
   white-space: nowrap;
@@ -619,7 +622,7 @@ main { display: block; }
   .hero-name { font-size: 11vw; white-space: normal; padding: 0 8px; }
   .linkedin-badge {
     left: auto; right: 24px; top: auto; bottom: 24px;
-    width: 32px; height: 28px; font-size: 13px;
+    width: 34px; height: 34px;
   }
 
   .profil-stage, .magasin-cover-stage, .magasin-content-stage,

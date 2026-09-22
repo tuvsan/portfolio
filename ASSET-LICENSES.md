@@ -18,7 +18,7 @@ Den här filen dokumenterar var varje mediefil i `assets/images/web/` kommer ifr
 | `mobilskal-cutout.png` | Produktfoto, mobilskal från DRM-LND | Sannolikt eget foto av tredje parts produkt | Bekräfta fotograf; produkten/designen ägs av DRM-LND |
 | `butiksbild.jpg` | Foto av DRM-LNDs butiksdisplay | Sannolikt eget foto | Se ovan |
 | `sellpy-logo.png` | Sellpys logotyp | Tredje parts varumärke | Nämns som samarbetspartner i texten |
-| `arkenzoo-logo.png` | Arken Zoos logotyp | Tredje parts varumärke | Nämns som samarbetspartner i texten |
+| `arkenzoo-logo.svg` | Arken Zoos officiella logotyp, hämtad direkt från arkenzoo.se (ersatte en tidigare skärmdump som råkat få med en webbläsartooltip/länktext) | Tredje parts varumärke | Nämns som samarbetspartner i texten |
 | `tiktok-video.mp4` | Videoklipp från Tuvas TikTok-konto | Eget innehåll (troligt) | Eventuell bakgrundsmusik/ljud kan ha egen upphovsrätt oberoende av videon |
 
 ## Borttaget i denna rättighetsöversyn

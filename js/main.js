@@ -34,26 +34,23 @@ if (video && toggle && phoneFrame) {
 
   const play = () => video.play().catch(() => {});
 
+  const userToggle = () => {
+    if (video.paused) {
+      userPaused = false;
+      video.muted = false; // safe here: this only runs from a real click, so it isn't blocked by autoplay-with-sound policies
+      play();
+    } else {
+      userPaused = true;
+      video.pause();
+    }
+  };
+
   toggle.addEventListener('click', (e) => {
     e.stopPropagation();
-    if (video.paused) {
-      userPaused = false;
-      play();
-    } else {
-      userPaused = true;
-      video.pause();
-    }
+    userToggle();
   });
 
-  phoneFrame.addEventListener('click', () => {
-    if (video.paused) {
-      userPaused = false;
-      play();
-    } else {
-      userPaused = true;
-      video.pause();
-    }
-  });
+  phoneFrame.addEventListener('click', userToggle);
 
   video.addEventListener('play', syncUi);
   video.addEventListener('pause', syncUi);
