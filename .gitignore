@@ -1,1 +1,7 @@
 .DS_Store
+
+# Raw/original image exports — kept locally as backups, not needed in the repo.
+# Only the optimized web/ versions (referenced by index.html) are committed.
+assets/images/*
+!assets/images/web/
+!assets/images/web/*
