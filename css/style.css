@@ -1,0 +1,220 @@
+:root {
+  --bg: #fbf3e9;
+  --text: #1a1a1a;
+  --accent-teal: #5cc3d6;
+  --accent-yellow: #f2e94e;
+  --font-script: 'Caveat', cursive;
+  --font-serif: 'EB Garamond', serif;
+  --font-sans: 'Inter', sans-serif;
+  --max-width: 720px;
+  --gap: 24px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: 19px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+main, header, footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-accent {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: var(--accent-teal);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.hero-name {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-script);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  margin: 0;
+}
+
+.social-icon {
+  position: absolute;
+  right: 32px;
+  bottom: 80px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--text);
+  color: var(--bg);
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.hero-photo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 45%;
+  max-width: 320px;
+}
+
+/* Sections */
+.section { padding: 80px 0; }
+
+.script-heading {
+  font-family: var(--font-script);
+  font-weight: 700;
+  font-size: 2.6rem;
+  text-align: left;
+  margin: 0 0 24px;
+}
+
+.script-heading.inline {
+  display: inline;
+  font-size: 1.6em;
+}
+
+.sans-heading {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 2.2rem;
+  margin: 0 0 16px;
+  text-align: left;
+}
+
+.sans-heading.italic { font-style: italic; }
+
+.arrow {
+  font-family: var(--font-sans);
+  margin-left: 8px;
+  color: var(--accent-teal);
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+ul { padding-left: 20px; }
+
+.credit, .caption {
+  font-style: italic;
+  font-size: 0.9em;
+  opacity: 0.75;
+}
+
+.programs { margin-top: 32px; }
+
+/* Image placeholders — swap for real <img> tags once assets are ready */
+.img-placeholder {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0,0,0,0.04),
+    rgba(0,0,0,0.04) 10px,
+    rgba(0,0,0,0.08) 10px,
+    rgba(0,0,0,0.08) 20px
+  );
+  border: 1px dashed rgba(0,0,0,0.3);
+  border-radius: 8px;
+  min-height: 220px;
+  display: flex;
+  align-items: flex-end;
+  padding: 8px;
+  margin: 20px 0;
+}
+
+.img-placeholder::after {
+  content: attr(data-note);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: rgba(0,0,0,0.5);
+}
+
+.img-placeholder.badge { min-height: 60px; width: 60px; border-radius: 50%; }
+.img-placeholder.wide { min-height: 320px; }
+.img-placeholder.phone { min-height: 380px; max-width: 220px; }
+
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.drmlnd-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.drmlnd-layout .img-placeholder.phone { flex-shrink: 0; }
+.drmlnd-layout p { flex: 1; min-width: 240px; }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 80px 24px 40px;
+}
+
+.thanks { font-size: 2.2rem; }
+
+.contact a {
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--font-sans);
+}
+
+.legal {
+  margin-top: 40px;
+  font-size: 0.8em;
+  font-family: var(--font-sans);
+  opacity: 0.6;
+}
+.legal a { color: inherit; }
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  body { font-size: 17px; text-align: left; }
+  .image-grid { grid-template-columns: 1fr; }
+  .hero-photo { width: 60%; }
+}
