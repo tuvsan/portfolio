@@ -1,8 +1,9 @@
 :root {
-  --bg: #fbf3e9;
-  --text: #1a1a1a;
-  --accent-teal: #5cc3d6;
-  --accent-yellow: #f2e94e;
+  --bg: #fffaf3;
+  --text: #000000;
+  --accent-teal: #5cc7db;
+  --accent-tan: #ebceb5;
+  --accent-peach: #fce9d8;
   --font-script: 'Caveat', cursive;
   --font-serif: 'EB Garamond', serif;
   --font-sans: 'Inter', sans-serif;
