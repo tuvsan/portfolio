@@ -474,6 +474,14 @@ main { display: block; }
   margin: 0 0 min(1vw, 14px);
 }
 
+.collab-text-col .stat {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--accent-teal);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+}
+
 .mobilskal-img {
   position: absolute;
   left: min(56.04vw, 807px);
