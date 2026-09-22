@@ -102,17 +102,17 @@ main { display: block; }
   margin: 0 0 min(1vw, 14px);
   padding-left: 1.2em;
   font-size: min(1.8vw, 26px);
-  line-height: 1.3;
+  line-height: 1.05;
 }
 
-.profil-text li { margin-bottom: 2px; }
+.profil-text li { margin-bottom: 0; }
 
 .profil-text .programs { margin-top: min(1.4vw, 20px); text-align: left; }
 
 .profil-photo {
   position: absolute;
-  right: min(6vw, 86px);
-  bottom: 0;
+  right: min(15.7vw, 226px);
+  bottom: min(11vw, 158px);
   width: min(26.4vw, 380px);
 }
 
@@ -195,7 +195,6 @@ main { display: block; }
 
 .bingo-wrap {
   position: relative;
-  padding-right: min(1.4vw, 20px);
 }
 
 .bingo-img {
@@ -204,9 +203,9 @@ main { display: block; }
   height: auto;
 }
 
-.vertical-credit {
+.magasin-left .vertical-credit {
   position: absolute;
-  right: 0;
+  right: min(-1.6vw, -23px);
   top: 0;
   height: 100%;
   display: flex;
@@ -214,7 +213,9 @@ main { display: block; }
   font-family: var(--font-serif);
   font-size: min(0.85vw, 12px);
   writing-mode: vertical-rl;
+  transform: rotate(180deg);
   margin: 0;
+  white-space: nowrap;
 }
 
 .magasin-right {
@@ -225,7 +226,8 @@ main { display: block; }
 }
 
 .magasin-right-top {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: min(1vw, 14px);
   margin-bottom: min(1.4vw, 20px);
 }
@@ -233,8 +235,8 @@ main { display: block; }
 .hemforstunden-img {
   display: block;
   width: 100%;
+  min-width: 0;
   height: auto;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
 .hemforstunden-img.tilt-left { transform: rotate(-3deg); }
@@ -246,7 +248,6 @@ main { display: block; }
   height: auto;
   margin-top: min(5.5vw, 80px);
   margin-bottom: min(1.2vw, 17px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
 .photo-credit {
@@ -270,7 +271,7 @@ main { display: block; }
 .studenttidning-text h2 {
   font-family: var(--font-sans);
   font-weight: 800;
-  font-size: min(1.9vw, 27px);
+  font-size: min(1.53vw, 22px);
   margin: 0 0 min(1vw, 14px);
   white-space: nowrap;
 }
@@ -291,7 +292,6 @@ main { display: block; }
   width: min(20.28vw, 292px);
   height: min(28.33vw, 408px);
   object-fit: contain;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
 /* ---------- 6. Instagram-karusell ---------- */
@@ -406,6 +406,7 @@ main { display: block; }
   background: #0b0b0b;
   border-radius: min(1.6vw, 23px);
   padding: min(0.55vw, 8px);
+  cursor: pointer;
 }
 
 .phone-notch {
@@ -445,6 +446,14 @@ main { display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.phone-frame:hover .phone-play-toggle,
+.phone-frame:focus-within .phone-play-toggle,
+.phone-frame.is-paused .phone-play-toggle {
+  opacity: 1;
 }
 
 .collab-text-col {
@@ -516,7 +525,7 @@ main { display: block; }
 
 .outro-portrait {
   position: absolute;
-  left: min(3vw, 43px);
+  left: min(10.4vw, 150px);
   bottom: 0;
   width: min(24.3vw, 350px);
   height: auto;
@@ -620,13 +629,13 @@ main { display: block; }
     flex-direction: column;
   }
 
-  .profil-text, .profil-photo,
+  .profil-text,
   .magasin-cover-heading, .magasin-cover-img,
   .magasin-left, .magasin-right,
   .studenttidning-text, .studenttidning-cover,
   .carousel-imgs, .carousel-caption,
   .nwt-heading, .nwt-body, .nwt-poster,
-  .collab-heading, .phone-frame, .collab-text-col,
+  .collab-heading, .collab-text-col,
   .mobilskal-img, .butiksbild-img, .sellpy-logo, .arkenzoo-logo, .collab-credit,
   .outro-portrait, .outro-heading, .outro-phone, .outro-email {
     position: static;
@@ -637,6 +646,30 @@ main { display: block; }
     max-width: 100%;
     height: auto;
     margin: 0 0 20px;
+  }
+
+  /* These two keep position:relative on mobile so their absolutely-
+     positioned children (glow / notch+button) stay anchored to them
+     instead of escaping to the nearest ancestor and overflowing. */
+  .profil-photo {
+    position: relative;
+    inset: auto;
+    left: auto; right: auto; top: auto; bottom: auto;
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    margin: 0 auto 20px;
+  }
+  .phone-frame {
+    position: relative;
+    inset: auto;
+    left: auto; right: auto; top: auto; bottom: auto;
+    width: 220px;
+    max-width: 100%;
+    aspect-ratio: 190 / 388;
+    margin: 0 auto 20px;
+    padding: 8px;
+    border-radius: 20px;
   }
 
   .profil-text p, .profil-text ul, .magasin-left p,
@@ -651,8 +684,11 @@ main { display: block; }
   .nwt-heading, .collab-heading { font-size: 24px; white-space: normal; }
   .outro-heading { font-size: 34px; }
   .outro-phone, .outro-email { font-size: 20px; display: block; }
+  .photo-credit { font-size: 13px; }
+  .carousel-caption { font-size: 14px; }
+  .site-footer { font-size: 13px; }
 
-  .magasin-cover-heading { white-space: normal; transform: rotate(-3deg); margin-bottom: 16px; }
+  .magasin-cover-heading { font-size: 32px; white-space: normal; transform: rotate(-3deg); margin-bottom: 16px; }
   .magasin-cover-img { transform: rotate(-3deg); max-width: 280px; margin: 0 auto; }
 
   .studenttidning-text { text-align: center; }
@@ -660,8 +696,15 @@ main { display: block; }
   .studenttidning-cover { max-width: 260px; margin: 0 auto; }
 
   .kau-logo { width: 56px; height: 56px; }
-  .bingo-wrap { padding-right: 26px; }
-  .vertical-credit { font-size: 12px; }
+  .magasin-left .vertical-credit {
+    position: static;
+    height: auto;
+    writing-mode: horizontal-tb;
+    transform: none;
+    display: block;
+    font-size: 13px;
+    margin-top: 8px;
+  }
 
   .magasin-right-top { gap: 10px; }
   .hemforstunden-img.tilt-left, .hemforstunden-img.tilt-right { transform: none; }
@@ -686,12 +729,12 @@ main { display: block; }
   .nwt-poster-mid { width: 96%; aspect-ratio: 303/428; }
 
   .drmlnd-logo { width: 140px; }
-  .phone-frame { width: 220px; aspect-ratio: 190/388; margin: 0 auto 20px; }
+  .phone-notch { top: 6px; height: 5px; }
+  .phone-play-toggle { width: 44px; height: 44px; font-size: 16px; }
   .mobilskal-img, .butiksbild-img { display: inline-block; width: 47%; margin: 0 1.5% 12px; height: auto; aspect-ratio: 197/385; }
   .sellpy-logo, .arkenzoo-logo { display: inline-block; width: auto; height: 32px; margin: 0 12px 12px 0; }
 
   .outro-portrait { max-width: 220px; margin: 0 auto 20px; }
-  .profil-photo { max-width: 260px; margin: 0 auto 20px; }
 
   .site-footer { flex-direction: column; text-align: center; }
 }

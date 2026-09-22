@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js');
+
 const revealEls = document.querySelectorAll('.reveal:not(.hero-stage)');
 
 if ('IntersectionObserver' in window) {
@@ -17,29 +19,51 @@ if ('IntersectionObserver' in window) {
 
 const video = document.querySelector('.phone-video');
 const toggle = document.querySelector('.phone-play-toggle');
+const phoneFrame = document.querySelector('.phone-frame');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-if (video && toggle) {
-  const setToggleLabel = () => {
-    toggle.textContent = video.paused ? '▶' : '❚❚';
+if (video && toggle && phoneFrame) {
+  let userPaused = false;
+
+  const syncUi = () => {
+    const isPaused = video.paused;
+    toggle.textContent = isPaused ? '▶' : '❚❚';
+    toggle.setAttribute('aria-label', isPaused ? 'Spela video' : 'Pausa video');
+    phoneFrame.classList.toggle('is-paused', isPaused);
   };
 
-  toggle.addEventListener('click', () => {
+  const play = () => video.play().catch(() => {});
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
     if (video.paused) {
-      video.play().catch(() => {});
+      userPaused = false;
+      play();
     } else {
+      userPaused = true;
       video.pause();
     }
   });
 
-  video.addEventListener('play', setToggleLabel);
-  video.addEventListener('pause', setToggleLabel);
-  setToggleLabel();
+  phoneFrame.addEventListener('click', () => {
+    if (video.paused) {
+      userPaused = false;
+      play();
+    } else {
+      userPaused = true;
+      video.pause();
+    }
+  });
 
-  if ('IntersectionObserver' in window) {
+  video.addEventListener('play', syncUi);
+  video.addEventListener('pause', syncUi);
+  syncUi();
+
+  if (!prefersReducedMotion && 'IntersectionObserver' in window) {
     const videoObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          video.play().catch(() => {});
+          if (!userPaused) play();
         } else {
           video.pause();
         }
