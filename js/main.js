@@ -37,6 +37,7 @@ if (video && toggle && phoneFrame) {
   const userToggle = () => {
     if (video.paused) {
       userPaused = false;
+      video.muted = false; // safe here: this only runs from a real click, so it isn't blocked by autoplay-with-sound policies
       play();
     } else {
       userPaused = true;
