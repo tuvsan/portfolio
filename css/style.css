@@ -79,6 +79,8 @@ main { display: block; }
 }
 
 /* ---------- 2. Profil ---------- */
+.profil-stage { margin-bottom: min(5.7vw, 82px); }
+
 .profil-text {
   position: absolute;
   left: min(7.92vw, 114px);
@@ -111,6 +113,7 @@ main { display: block; }
 .profil-text li { margin-bottom: 0; }
 
 .profil-text .programs { margin-top: min(1.4vw, 20px); text-align: left; }
+.profil-text .profil-lead { text-align: left; }
 
 .profil-photo {
   position: absolute;
@@ -620,6 +623,8 @@ main { display: block; }
     max-width: 100%;
     padding: 48px 24px;
   }
+
+  .profil-stage { margin-bottom: 0; }
 
   .hero-stage { min-height: 60vh; padding: 24px; aspect-ratio: auto; }
   .hero-circle { width: 170px; }
