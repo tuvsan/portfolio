@@ -300,8 +300,20 @@ main { display: block; }
   object-fit: contain;
 }
 
+.studenttidning-link {
+  position: absolute;
+  left: 50%;
+  top: min(53.26vw, 767px);
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-family: var(--font-serif);
+  font-size: min(1.25vw, 18px);
+  color: inherit;
+  text-decoration: none;
+}
+
 /* ---------- 6. Instagram-karusell ---------- */
-.carousel-stage { overflow: visible; }
+.carousel-stage { overflow: visible; pointer-events: none; }
 
 .carousel-imgs { position: absolute; inset: 0; }
 
@@ -706,6 +718,15 @@ main { display: block; }
   .studenttidning-text { text-align: center; }
   .studenttidning-text p { width: 100%; margin-left: auto; margin-right: auto; }
   .studenttidning-cover { max-width: 260px; margin: 0 auto; }
+  .studenttidning-link {
+    position: static;
+    transform: none;
+    align-self: center;
+    white-space: normal;
+    text-align: center;
+    font-size: 16px;
+    padding: 12px 8px;
+  }
 
   .kau-logo { width: 56px; height: 56px; }
   .magasin-left .vertical-credit {
